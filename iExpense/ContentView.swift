@@ -114,14 +114,17 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Add Expense", systemImage: "plus") {
+                    /*Button("Add Expense", systemImage: "plus") {
                         showingAddExpense = true
+                    }*/
+                    NavigationLink(destination: AddView(expenses: expenses)) {
+                        Image(systemName: "plus")
                     }
                 }
             }
-            .sheet(isPresented: $showingAddExpense) {
+            /*.sheet(isPresented: $showingAddExpense) {
                 AddView(expenses: expenses)
-            }
+            }*/
         }
     }
     
